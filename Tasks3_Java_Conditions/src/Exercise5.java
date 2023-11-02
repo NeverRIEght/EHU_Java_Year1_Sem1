@@ -16,10 +16,21 @@ public class Exercise5 {
                 result *= -1;
             }
 
+            System.out.printf("%.3f%n", result);
+
+            System.out.printf("%.3f", result);
+
             System.out.println(String.format("%.3f", result));
+
+            System.out.print(String.format("%.3f", result));
+
+            System.out.print(result);
+
+            System.out.println(result);
+
+            System.out.println(String.valueOf(result));
+
+            System.out.print(String.valueOf(result));
         }
     }
 }
-
-
-
