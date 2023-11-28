@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Exercise10 {
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in)) {
+
             double a = sc.nextDouble();
             double b = sc.nextDouble();
             double c = sc.nextDouble();
