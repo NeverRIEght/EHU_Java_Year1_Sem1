@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Exercise1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int lastDigit = sc.nextInt();
+        int inputDigit = sc.nextInt();
 
         String output = "";
 
         int i = 0;
-        while(i <= lastDigit) {
+        while(i <= inputDigit) {
             output += i + " ";
             i++;
         }
