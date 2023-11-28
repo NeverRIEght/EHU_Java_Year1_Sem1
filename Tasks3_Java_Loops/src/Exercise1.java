@@ -8,14 +8,14 @@ public class Exercise1 {
         Scanner sc = new Scanner(System.in);
         int lastDigit = sc.nextInt();
 
+        String output = "";
+
         int i = 0;
-        while(i < lastDigit) {
-            System.out.print(i + " ");
+        while(i <= lastDigit) {
+            output += i + " ";
             i++;
         }
 
-        if(i == lastDigit) {
-            System.out.print(i);
-        }
+        System.out.println(output.trim());
     }
 }
