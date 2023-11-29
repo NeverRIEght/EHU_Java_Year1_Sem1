@@ -12,8 +12,41 @@ public class Exercise9 {
             double x2 = sc.nextDouble();
             double y2 = sc.nextDouble();
 
-            double distanceFrom0ToPointA = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
-            double distanceFrom0ToPointB = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
+            double distanceFrom0ToPointA = x1 * x1 + y1 * y1;
+
+            double value = distanceFrom0ToPointA;
+
+            if (value == 0 || value == 1) {
+                distanceFrom0ToPointA = value;
+            } else {
+                double approx = value / 2.0;
+                double lastApprox = 0.0;
+
+                while (approx != lastApprox) {
+                    lastApprox = approx;
+                    approx = 0.5 * (approx + value / approx);
+                }
+
+                distanceFrom0ToPointA = approx;
+            }
+
+            double distanceFrom0ToPointB = x2 * x2 + y2 * y2;
+
+            value = distanceFrom0ToPointB;
+
+            if (value == 0 || value == 1) {
+                distanceFrom0ToPointB = value;
+            } else {
+                double approx = value / 2.0;
+                double lastApprox = 0.0;
+
+                while (approx != lastApprox) {
+                    lastApprox = approx;
+                    approx = 0.5 * (approx + value / approx);
+                }
+
+                distanceFrom0ToPointB = approx;
+            }
 
             if(distanceFrom0ToPointA == distanceFrom0ToPointB) {
                 System.out.println(0);

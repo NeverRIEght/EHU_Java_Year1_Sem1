@@ -1,10 +1,12 @@
 //Given floating point numbers a, b and x.
 //Output absolute value of the expression a*x + b to 3 decimal places.
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Exercise5 {
     public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
         try(Scanner sc = new Scanner(System.in)) {
             double a = sc.nextDouble();
             double b = sc.nextDouble();

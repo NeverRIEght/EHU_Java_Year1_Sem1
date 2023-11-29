@@ -10,9 +10,9 @@ public class Exercise8 {
             double a = sc.nextDouble();
 
             if(a >= 0) {
-                System.out.printf("%.3f%n", Math.pow(a, 2));
+                System.out.printf("%.3f%n", a*a);
             } else {
-                System.out.printf("%.3f%n", Math.pow(a, 4));
+                System.out.printf("%.3f%n", a*a*a*a);
             }
         }
     }
