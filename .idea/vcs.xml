@@ -2,7 +2,15 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/average" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/go-dutch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/max-in-seq" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/meet-a-stranger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/meet-an-agent" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/meet-autocode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/meet-strangers" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pizza-split" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/quadratic-equation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/snail" vcs="Git" />
   </component>
 </project>
