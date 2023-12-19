@@ -1,3 +1,5 @@
+package OneDimensional;
+
 public class Exercise2 {
 
     /**
