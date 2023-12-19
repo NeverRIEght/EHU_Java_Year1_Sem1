@@ -12,7 +12,7 @@ public class Exercise18 {
         int column = 0;
 
         for(int i = 0; i < a.length; i++) {
-            for(int j = 0; j < a[i].length - 1; j++) {
+            for(int j = 0; j < a[i].length; j++) {
                 if(a[i][j] > max) {
                     max = a[i][j];
                     column = j;
