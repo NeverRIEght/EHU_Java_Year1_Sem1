@@ -9,19 +9,16 @@ public class Exercise11 {
      */
     public static int getResult(int[] a) {
         int min = a[0];
+        int countOfGreaterElements = 0;
         for(int i = 1; i < a.length; i++) {
             if(a[i] < min) {
                 min = a[i];
+                countOfGreaterElements++;
+            } else if(a[i] > min) {
+                countOfGreaterElements++;
             }
         }
 
-        int countOfAppropriateElements = 0;
-        for(int i = 0; i < a.length; i++) {
-            if(a[i] > min) {
-                countOfAppropriateElements++;
-            }
-        }
-
-        return countOfAppropriateElements;
+        return countOfGreaterElements;
     }
 }

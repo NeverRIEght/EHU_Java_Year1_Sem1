@@ -16,9 +16,9 @@ public class Exercise12 {
                 a[lastFreeIndex] = a[i];
                 lastFreeIndex++;
             }
-        }
-        for(int i = lastFreeIndex; i < a.length; i++) {
-            a[i] = 0;
+            if(i >= lastFreeIndex) {
+                a[i] = 0;
+            }
         }
     }
 }
