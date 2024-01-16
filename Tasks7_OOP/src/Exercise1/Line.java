@@ -9,7 +9,7 @@ public class Line {
 
     }
 
-    public Line(int k, int b) {
+    public Line(double k, double b) {
         this.k = k;
         this.b = b;
     }
