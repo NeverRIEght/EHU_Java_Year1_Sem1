@@ -27,19 +27,19 @@ class Exercise1 {
         int[] bMultiples = new int[b];
 
         for(int i = 0; i < a; i++) {
-            aMultiples[i] = i * a;
+            aMultiples[i] = (i + 1) * a;
         }
 
         for(int i = 0; i < b; i++) {
-            bMultiples[i] = i * b;
+            bMultiples[i] = (i + 1) * b;
         }
 
         Arrays.sort(aMultiples);
         Arrays.sort(bMultiples);
 
-        int lcm = 0;
+        int lcm = a * b;
         for(int i = 0; i < a; i++) {
-            if(lcm != 0) {
+            if(lcm != a * b) {
                 break;
             }
             for(int j = 0; j < b; j++) {
