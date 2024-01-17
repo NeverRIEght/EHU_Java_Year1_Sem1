@@ -15,9 +15,6 @@ class Exercise1 {
             lastChar++;
         }
 
-        String outputStr = Arrays.toString(output).replace("[", "").
-                replace("]", "").replace(", ", "");
-
-        return outputStr;
+        return String.valueOf(output);
     }
 }
