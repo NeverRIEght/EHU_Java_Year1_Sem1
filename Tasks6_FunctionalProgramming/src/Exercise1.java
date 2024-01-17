@@ -14,7 +14,8 @@ class Exercise1 {
 
     private static int euclid(int a, int b) {
         int gcd = 1;
-        for(int i = 1; i < Math.max(a, b); i++) {
+        int max = Math.max(a, b);
+        for(int i = 2; i <= max; i++) {
             if(a % i == 0 && b % i == 0 && i > gcd) {
                 gcd = i;
             }
@@ -23,34 +24,7 @@ class Exercise1 {
     }
 
     private static int getLcm(int a, int b, int gcd) {
-        int[] aMultiples = new int[a];
-        int[] bMultiples = new int[b];
-
-        for(int i = 0; i < a; i++) {
-            aMultiples[i] = (i + 1) * a;
-        }
-
-        for(int i = 0; i < b; i++) {
-            bMultiples[i] = (i + 1) * b;
-        }
-
-        Arrays.sort(aMultiples);
-        Arrays.sort(bMultiples);
-
-        int lcm = a * b;
-        for(int i = 0; i < a; i++) {
-            if(lcm != a * b) {
-                break;
-            }
-            for(int j = 0; j < b; j++) {
-                if(aMultiples[i] == bMultiples[j]) {
-                    lcm = aMultiples[i];
-                    break;
-                }
-            }
-        }
-
-        return lcm;
+        return (a * b) / gcd;
     }
 }
 
