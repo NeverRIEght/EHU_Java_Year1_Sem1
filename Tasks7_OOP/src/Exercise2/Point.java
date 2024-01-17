@@ -1,5 +1,5 @@
 package Exercise2;
-public class Point {
+class Point {
     private double x;
     private double y;
 
@@ -9,7 +9,7 @@ public class Point {
     }
 
     public boolean isBelonging(Line line) {
-        return this.y == line.getK() * this.x + line.getB();
+        return this.y == line.ordinate(this.x);
     }
 
     public boolean isBelonging(Ray ray) {
@@ -23,7 +23,7 @@ public class Point {
     }
 
     public boolean isOver(Line line) {
-        return this.y > line.getK() * this.x + line.getB();
+        return this.y > line.ordinate(this.x);
     }
 
     @Override

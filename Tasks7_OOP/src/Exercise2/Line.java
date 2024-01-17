@@ -1,6 +1,6 @@
 package Exercise2;
 
-public class Line {
+class Line {
     //y = k * x + b
     private double k;
     private double b;
@@ -25,12 +25,12 @@ public class Line {
         //x(k1 - k2) = b2 - b1
         //x = (b2 - b1) / (k1 - k2)
 
-        if(this.getK() - line.getK() == 0) {
+        if((this.b > line.b || this.b < line.b) && this.k == line.k) {
             return null;
         }
 
-        double interX = (line.getB() - this.getB()) / (this.getK() - line.getK());
-        double interY = this.getK() * interX + this.getB();
+        double interX = (line.b - this.b) / (this.k - line.k);
+        double interY = this.k * interX + this.b;
 
         Point interPoint = new Point(interX, interY);
         if(interPoint.isBelonging(this) && interPoint.isBelonging(line)) {
@@ -41,27 +41,25 @@ public class Line {
     }
 
     public Point intersection(Ray ray) {
-        if(this.getK() - ray.getLine().getK() == 0) {
+
+        //Если прямые параллельны, то пересечения нету
+
+        if((this.b > ray.getLine().b || this.b < ray.getLine().b) && this.k == ray.getLine().k) {
             return null;
         }
 
-        double interX = (ray.getLine().getB() - this.getB()) / (this.getK() - ray.getLine().getK());
-        double interY = this.getK() * interX + this.getB();
+        //Если interX в другую сторону от направления луча, то пересечения нету
 
+        double interX = (ray.getLine().b - this.b / (this.k - ray.getLine().k));
+        double interY = this.k * interX + this.b;
         Point interPoint = new Point(interX, interY);
 
-        if(interPoint.isBelonging(this) && interPoint.isBelonging(ray)) {
+        if(interX > ray.getX0() && ray.isToRight()) {
+            return interPoint;
+        } else if(interX < ray.getX0() && !ray.isToRight()) {
             return interPoint;
         }
 
         return null;
-    }
-
-    public double getK() {
-        return k;
-    }
-
-    public double getB() {
-        return b;
     }
 }
