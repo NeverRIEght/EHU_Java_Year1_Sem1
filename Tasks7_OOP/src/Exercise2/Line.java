@@ -16,15 +16,6 @@ class Line {
 
     public Point intersection(Line line) {
 
-        //y = k1x + b1 (this)
-        //y = k2x + b2 (line)
-
-        //0 = (k1x - k2x) + (b1 - b2)
-        //0 = x(k1 - k2) + (b1 - b2)
-        //x(k1 - k2) = -(b1 - b2)
-        //x(k1 - k2) = b2 - b1
-        //x = (b2 - b1) / (k1 - k2)
-
         if((this.b > line.b || this.b < line.b) && this.k == line.k) {
             return null;
         }
@@ -50,8 +41,18 @@ class Line {
 
         //Если interX в другую сторону от направления луча, то пересечения нету
 
-        double interX = (ray.getLine().b - this.b / (this.k - ray.getLine().k));
-        double interY = this.k * interX + this.b;
+
+        //y = k1x + b1 (line)
+        //y = k2x + b2 (ray)
+
+        //0 = (k1x - k2x) + (b1 - b2)
+        //0 = x(k1 - k2) + (b1 - b2)
+        //x(k1 - k2) = -(b1 - b2)
+        //x(k1 - k2) = b2 - b1
+        //x = (b2 - b1) / (k1 - k2)
+
+        double interX = (ray.getLine().b - this.b) / (this.k - ray.getLine().k);
+        double interY = ray.getLine().k * interX + ray.getLine().b;
         Point interPoint = new Point(interX, interY);
 
         if(interX > ray.getX0() && ray.isToRight()) {
