@@ -7,14 +7,19 @@ class Exercise4 {
      * @return whether they are coprime
      */
     public static boolean areCoprime(int a, int b, int c) {
-        return getGCD(a, b, c) == 1;
+        boolean flag = true;
+        if(getGCD(a, b) != 1 || getGCD(b, c) != 1 || getGCD(a, c) != 1) {
+            flag = false;
+        }
+
+        return flag;
     }
 
-    private static int getGCD(int a, int b, int c) {
+    private static int getGCD(int a, int b) {
         int gcd = 1;
-        int max = Math.max(Math.max(a, b), c);
+        int max = Math.max(a, b);
         for(int i = 2; i <= max; i++) {
-            if(a % i == 0 && b % i == 0 && c % i == 0 && i > gcd) {
+            if(a % i == 0 && b % i == 0 && i > gcd) {
                 gcd = i;
             }
         }
@@ -36,7 +41,7 @@ class Exercise4 {
             int b = sets[i][1];
             int c = sets[i][2];
 
-            System.out.println(i + 1 + ". " + (getGCD(a, b, c) == 1));
+            System.out.println(i + 1 + ". " + (areCoprime(a, b, c)));
         }
     }
 }
