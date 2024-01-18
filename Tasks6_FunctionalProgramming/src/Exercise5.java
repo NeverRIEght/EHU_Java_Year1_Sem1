@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Exercise5 {
 
     /**
@@ -7,25 +9,18 @@ class Exercise5 {
      * but not less than all other elements, if any.
      */
     public static int secondLargest(int[] a) {
-        int max;
-        int premax;
-        if(a[0] >= a[1]) {
-            max = a[0];
-            premax = a[1];
-        } else {
-            max = a[1];
-            premax = a[0];
-        }
-        for(int i = 0; i < a.length; i++) {
-            if(premax < a[i] && a[i] < max) {
+        Arrays.sort(a);
+
+        int max = a[a.length - 1];
+        int premax = a[a.length - 2];
+
+        for(int i = a.length - 2; i >= 0; i--) {
+            if(a[i] < max) {
                 premax = a[i];
-            }
-            if(a[i] > max) {
-                int temp = max;
-                max = a[i];
-                premax = temp;
+                break;
             }
         }
+
         return premax;
     }
 }
