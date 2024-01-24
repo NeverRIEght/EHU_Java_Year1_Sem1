@@ -1,3 +1,5 @@
+package Exercise1;
+
 class Result {
     private int grade1;
     private int grade2;

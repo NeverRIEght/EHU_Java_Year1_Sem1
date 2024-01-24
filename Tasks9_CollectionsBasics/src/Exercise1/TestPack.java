@@ -1,3 +1,5 @@
+package Exercise1;
+
 import java.util.Objects;
 
 class TestPack implements Comparable<TestPack> {
