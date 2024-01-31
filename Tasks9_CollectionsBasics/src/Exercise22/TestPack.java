@@ -1,8 +1,6 @@
 package Exercise22;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 class TestPack implements Comparable<TestPack> {
     private final int id;
@@ -49,20 +47,33 @@ class Result implements Comparable<Result>{
     }
 
     @Override
+    public String toString() {
+        return grade1 + ";" + grade2 + ";" + (grade1 + grade2);
+    }
+
+    @Override
     public int compareTo(Result o) {
         return grade2+grade1 - (o.grade2 + o.grade1);
     }
 }
 
 class Register {
-    private ArrayList<TestPack> packs;
+    private List<TestPack> packs;
     private boolean isSorted;
 
     public Register(String line) {
-        TestPack[] objects = decomposeString(line);
+        String[] strings = line.split(" ");
+        TestPack[] output = new TestPack[strings.length];
+
+        for(int i = 0; i < strings.length; i++) {
+            String[] parts = strings[i].split(";", 3);
+            Result res = new Result(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+            output[i] = new TestPack(Integer.parseInt(parts[0]), res);
+        }
+
         packs = new ArrayList<>();
 
-        Collections.addAll(packs, objects);
+        Collections.addAll(packs, output);
         isSorted = false;
     }
 
@@ -137,21 +148,4 @@ class Register {
         sb.append("]");
         return sb.toString();
     }
-
-    private TestPack[] decomposeString(String input) {
-        String[] strings = input.split(" ");
-        TestPack[] output = new TestPack[strings.length];
-
-        for(int i = 0; i < strings.length; i++) {
-            String[] parts = strings[i].split(";", 3);
-            Result res = new Result(Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
-            output[i] = new TestPack(Integer.parseInt(parts[0]), res);
-        }
-
-        return output;
-    }
-
-
-
-
 }
